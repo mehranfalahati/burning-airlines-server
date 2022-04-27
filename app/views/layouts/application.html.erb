@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to 'Home', root_path %>
+      <% if @current_user.present? %>
+        <%= link_to 'Reservation', reservations_path %>
+        <%= link_to 'Flight', flights_path %>
+        <%= link_to 'Airplanes', airplanes_path %>
+        <%= link_to 'Log out', login_path, :method => 'delete' %>
+      <% else %>
+        <%= link_to 'Sign Up', new_user_path %>
+        <%= link_to 'Log In', login_path %>
+      <% end %>
+    
+    </nav>
     <%= yield %>
   </body>
 </html>
