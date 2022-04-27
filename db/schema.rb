@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_04_27_070912) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "airplanes", force: :cascade do |t|
     t.text "name"
     t.text "rows"
@@ -25,8 +28,7 @@ ActiveRecord::Schema.define(version: 2022_04_27_070912) do
     t.text "number"
     t.text "origin"
     t.text "destination"
-    t.text "plane_name"
-    t.integer "plane_id"
+    t.integer "airplane_id"
     t.integer "seats"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
