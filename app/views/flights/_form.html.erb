@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= form.label :plane_id %>
-    <%= form.number_field :plane_id %>
+    <%= select_tag "airplanes", options_from_collection_for_select(@airplanes, "id", "name") %>
   </div>
 
   <div class="field">
